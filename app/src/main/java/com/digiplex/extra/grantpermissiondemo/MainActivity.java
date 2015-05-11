@@ -22,6 +22,18 @@ public class MainActivity extends PreferenceActivity {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.preference);
+
+        showVulnerableStatus();
+    }
+
+    private void showVulnerableStatus() {
+
+        String keyToBeRemoved = "unsafe";
+        if(vulnerable())
+            keyToBeRemoved = "safe";
+
+        getPreferenceScreen().removePreference(getPreferenceScreen().findPreference(keyToBeRemoved));
+
     }
 
     @Override
@@ -49,7 +61,7 @@ public class MainActivity extends PreferenceActivity {
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
 
-        if(checkVulnerability()){
+        if(!vulnerable()){
             new AlertDialog.Builder(this)
                     .setTitle("Safe!")
                     .setMessage("Your phone is not vulnerable")
@@ -76,8 +88,8 @@ public class MainActivity extends PreferenceActivity {
         return true;
     }
 
-    private boolean checkVulnerability() {
-        return Build.VERSION.SDK_INT >= 21;
+    private boolean vulnerable() {
+        return Build.VERSION.SDK_INT < 21;
     }
 
     void clickMultiple(boolean stealth) {
