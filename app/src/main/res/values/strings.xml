@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">No Permission App</string>
+    <string name="contacts">Contacts</string>
+    <string name="images">Images</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="action_settings">Settings</string>
+</resources>

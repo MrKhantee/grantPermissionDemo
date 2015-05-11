@@ -1,0 +1,18 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="launch"
+        android:summary=""
+        android:title="Launch" />
+
+    <Preference
+        android:key="providers"
+        android:summary="Shows providers vulnerable"
+        android:title="Show Providers" />
+    <Preference
+        android:key="stealth"
+        android:summary="Extract Contacts without User Knowledge"
+        android:title="Launch Stealth" />
+
+
+</PreferenceScreen>
