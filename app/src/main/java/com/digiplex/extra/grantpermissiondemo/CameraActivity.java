@@ -16,9 +16,6 @@ import android.widget.Toast;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Created by nandeesh on 10/5/15.
- */
 public class CameraActivity extends Activity {
 
 
