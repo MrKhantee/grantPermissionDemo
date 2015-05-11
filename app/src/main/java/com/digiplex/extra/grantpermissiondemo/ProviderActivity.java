@@ -1,7 +1,6 @@
 package com.digiplex.extra.grantpermissiondemo;
 
 import android.app.ActivityManager;
-import android.app.LauncherActivity;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -97,7 +96,7 @@ public class ProviderActivity extends ListActivity {
                     }
                 }
 
-            }else if (provider.applicationInfo.uid != 1000) {
+            } else if (provider.applicationInfo.uid != 1000) {
                 allowed = false;
             }
             return allowed;

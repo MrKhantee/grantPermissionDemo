@@ -23,14 +23,11 @@
 package com.digiplex.extra.grantpermissiondemo;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 
 public class ContactActivity extends FragmentActivity implements OnContactSelectedListener {
     public static final String SELECTED_CONTACT_ID = "contact_id";

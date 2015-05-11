@@ -1,14 +1,19 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
 
     <Preference
+        android:key="title"
+        android:summary="Your phone is vulnerable"
+        android:title="Vulnerable" />
+
+    <Preference
         android:key="launch"
-        android:summary=""
-        android:title="Launch" />
+        android:summary="View Contacts/Images without permission"
+        android:title="View Contacts/Images" />
 
     <Preference
         android:key="providers"
-        android:summary="Shows providers vulnerable"
-        android:title="Show Providers" />
+        android:summary="View vulnerable Apps and Uri Authority"
+        android:title="View Vulnerable Apps" />
     <Preference
         android:key="stealth"
         android:summary="Extract Contacts without User Knowledge"

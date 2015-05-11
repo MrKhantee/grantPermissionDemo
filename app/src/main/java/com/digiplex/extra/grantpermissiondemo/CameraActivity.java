@@ -10,7 +10,6 @@ import android.content.pm.ResolveInfo;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.util.Log;
 import android.widget.Toast;
 
 import java.util.List;
@@ -22,10 +21,6 @@ public class CameraActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-        Log.e("Nandeesh2", "" + getComponentName());
-
 
         ComponentName me = new ComponentName(this, CameraActivity.class);
         if (getComponentName().equals(me)) {
@@ -76,7 +71,7 @@ public class CameraActivity extends Activity {
         if (phones.moveToPosition(randomNum)) {
             String name = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
             String phoneNumber = phones.getString(phones.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-            Toast.makeText(this, "Contact " + name +":"+ phoneNumber+ " extracted", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Contact " + name + ":" + phoneNumber + " extracted", Toast.LENGTH_LONG).show();
         }
 
         phones.close();

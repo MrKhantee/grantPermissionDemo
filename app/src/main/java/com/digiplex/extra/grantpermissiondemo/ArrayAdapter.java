@@ -17,18 +17,22 @@
 package com.digiplex.extra.grantpermissiondemo;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.LayoutInflater;
 import android.widget.BaseAdapter;
 
 import java.util.List;
 
-public abstract class ArrayAdapter<E> extends BaseAdapter
-{
+public abstract class ArrayAdapter<E> extends BaseAdapter {
+    private final Context mContext;
+    private final LayoutInflater mInflater;
+    private final int mLayoutRes;
+    private List<E> mList;
+
     public ArrayAdapter(Context context, int layoutRes) {
         mContext = context;
-        mInflater = (LayoutInflater)context.getSystemService(
+        mInflater = (LayoutInflater) context.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
         mLayoutRes = layoutRes;
     }
@@ -69,9 +73,4 @@ public abstract class ArrayAdapter<E> extends BaseAdapter
         bindView(view, mList.get(position));
         return view;
     }
-
-    private final Context mContext;
-    private final LayoutInflater mInflater;
-    private final int mLayoutRes;
-    private List<E> mList;
 }
