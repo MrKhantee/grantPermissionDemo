@@ -1,6 +1,5 @@
 package com.digiplex.extra.grantpermissiondemo;
 
-import android.app.ActivityManager;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -19,9 +18,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-/**
- * Created by digiplex on 7/5/15.
- */
 public class ProviderActivity extends ListActivity {
 
 
@@ -33,13 +29,12 @@ public class ProviderActivity extends ListActivity {
             return collator.compare(a.label, b.label);
         }
     };
-    private List<MyPackageInfo> mPackageInfoList = new ArrayList<MyPackageInfo>();
-    private PackageListAdapter mAdapter;
+    private List<MyPackageInfo> mPackageInfoList = new ArrayList<>();
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mAdapter = new PackageListAdapter(this);
+        PackageListAdapter mAdapter = new PackageListAdapter(this);
         setListAdapter(mAdapter);
     }
 
@@ -84,7 +79,6 @@ public class ProviderActivity extends ListActivity {
             boolean allowed = true;
 
             if (provider.readPermission != null) {
-                ActivityManager am = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
                 if (getPackageManager().checkPermission(provider.readPermission, "android") != PackageManager.PERMISSION_GRANTED) {
                     allowed = false;
                 }

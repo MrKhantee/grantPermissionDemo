@@ -23,7 +23,6 @@ public class ImageActivity extends ListActivity {
     public static final String CAMERA_IMAGE_BUCKET_ID =
             getBucketId(CAMERA_IMAGE_BUCKET_NAME);
     int THUMBNAIL_SIZE = 100000;
-    private List<ImageData> values;
 
     /**
      * Matches code in MediaProvider.computeBucketValues. Should be a common
@@ -63,7 +62,7 @@ public class ImageActivity extends ListActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        values = getCameraImages(this);
+        List<ImageData> values = getCameraImages(this);
         ArrayAdapter<ImageData> adapter = new ArrayAdapter<ImageData>(this,
                 android.R.layout.simple_list_item_1, values);
         setListAdapter(adapter);
@@ -74,7 +73,6 @@ public class ImageActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
 
-        ImageData temp = values.get(position);
     }
 
     private static class ImageData {

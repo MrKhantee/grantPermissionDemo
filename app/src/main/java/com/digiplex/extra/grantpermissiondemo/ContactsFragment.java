@@ -28,9 +28,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
-import android.provider.ContactsContract.CommonDataKinds.Phone;
 import android.provider.ContactsContract.Contacts;
-import android.provider.ContactsContract.Data;
 import android.support.v4.app.ListFragment;
 import android.support.v4.app.LoaderManager.LoaderCallbacks;
 import android.support.v4.content.CursorLoader;
@@ -83,27 +81,7 @@ public class ContactsFragment extends ListFragment implements
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        /* Retrieving the phone numbers in order to see if we have more than one */
-        String phoneNumber = null;
-        String name = null;
-
-        String[] projection = new String[]{Phone.DISPLAY_NAME, Phone.NUMBER};
-        final Cursor phoneCursor = getActivity().getContentResolver().query(
-                Phone.CONTENT_URI,
-                projection,
-                Data.CONTACT_ID + "=?",
-                new String[]{String.valueOf(id)},
-                null);
-
-        if (phoneCursor.moveToFirst() && phoneCursor.isLast()) {
-            final int contactNumberColumnIndex = phoneCursor.getColumnIndex(Phone.NUMBER);
-            phoneNumber = phoneCursor.getString(contactNumberColumnIndex);
-            name = phoneCursor.getString(phoneCursor.getColumnIndex(Phone.DISPLAY_NAME));
-        }
-
-
         mContactsListener.onContactNameSelected(id);
-
     }
 
     @Override

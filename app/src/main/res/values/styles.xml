@@ -12,9 +12,4 @@
         <item name="android:paddingTop">8dip</item>
         <item name="android:paddingBottom">8dip</item>
     </style>
-
-
-    <color name="blue">#00abea</color>
-    <color name="white">#ffffff</color>
-
 </resources>

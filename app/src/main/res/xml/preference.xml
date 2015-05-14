@@ -3,13 +3,13 @@
     <Preference
         android:key="unsafe"
         android:summary="Your phone is vulnerable"
-        android:icon="@drawable/red"
+        android:icon="@drawable/ic_red"
         android:title="Vulnerable" />
 
     <Preference
         android:key="safe"
         android:summary="Your phone is safe!"
-        android:icon="@drawable/green"
+        android:icon="@drawable/ic_green"
         android:title="Not Vulnerable" />
 
     <Preference

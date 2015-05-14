@@ -25,13 +25,11 @@ import android.widget.BaseAdapter;
 import java.util.List;
 
 public abstract class ArrayAdapter<E> extends BaseAdapter {
-    private final Context mContext;
     private final LayoutInflater mInflater;
     private final int mLayoutRes;
     private List<E> mList;
 
     public ArrayAdapter(Context context, int layoutRes) {
-        mContext = context;
         mInflater = (LayoutInflater) context.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
         mLayoutRes = layoutRes;
